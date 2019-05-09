@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <!-- Below is the link to the jQuery library -->
     <!-- This should always be before your script -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script>
         var count = 0; // A counter variable to be used in Feature Set 3
 
@@ -14,12 +14,13 @@
             //Here are some examples using jQuery
             //.addClass is used to add a class to any element
             //here we are targeting the div1 element
-            $("#div1").addClass("red"); //change the word red to pink *note these classes have already been created in the CSS file
+            $("#div1").addClass("pink"); //change the word red to pink *note these classes have already been created in the CSS file
 
             //.click is like using the onclick attribute we used before
             //It creates an event handler for when div1 is clicked
             $("#div1").click(function(){
-                console.log("You clicked div 1, It is red"); //Fix the output to reflect div1's new color
+                $(this).text("Click Count" + count++);
+                console.log("You clicked div 1, It is pink"); //Fix the output to reflect div1's new color
 
             });
 
@@ -31,12 +32,23 @@
                 if($("#div2").hasClass("green")){
                     //If it has the class "green" then it will output "I am Green!"
                     console.log("I am Green!");
+                    $(this).text("I am Green!");
                 }else{
                     //else it does not have the class "green" then it will output "I am White!"
                     console.log("I am White!");
+                    $(this).text("I am White!");
                 }
             });
             //----Write your code bellow----//
+            $("#div3").addClass("card-back");
+            $("#div3").click(function(){
+                $("#div3").toggleClass("flag");
+            })
+
+            $("#div4").addClass("card-back");
+            $("#div4").click(function(){
+                $("#div4").toggleClass("path");
+            })
 
 
 
