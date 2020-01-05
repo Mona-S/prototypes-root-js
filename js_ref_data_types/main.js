@@ -40,7 +40,9 @@ student.answerQuestion = function(){
         }
         return currentQuestion;
     }
-    else {return "You have no questions in your queue"};
+    else {
+        return "You have no questions in your queue";
+    }
 }
 
 console.log("Greet Test: " + student.greeting());
